@@ -139,7 +139,8 @@
 ;;; Testing
 ;;;---------------------------------------------------------------------------
 
-(asdf:load-system "fiveam-asdf")
+;;; POD This won't be found. It is used for testing.
+;(asdf:load-system "fiveam-asdf")
 
 (defclass tester-cl-source-file ( cl-file-with-defconstants )
   ()
@@ -170,6 +171,8 @@ shop2."
 
 (defclass shop-fiveam-tester (shop-tester-mixin fiveam-tester-system) ())
 
+;;; POD won't be running the tests.
+#+nil 
 (defsystem shop2/test
     :defsystem-depends-on ((:version "fiveam-asdf" "2"))
     :class shop-fiveam-tester
